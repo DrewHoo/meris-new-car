@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New-car shopping — price vs. mileage vs. efficiency (CT out-the-door)</title>
+    <meta name="description" content="An interactive scatter plot of 35 new & used cars — Prius, RAV4, CR-V, Civic Hybrid, Tesla Model Y, Kia Niro EV, Subaru hybrids — with Connecticut out-the-door pricing and annual running cost. Swap any two axes, filter models, normalize trims across makes." />
+
+    <!-- Favicons: SVG for modern browsers, PNG fallbacks for Safari/iOS -->
+    <link rel="icon" type="image/svg+xml" href="/meris-new-car/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/meris-new-car/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/meris-new-car/favicon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/meris-new-car/apple-touch-icon.png" />
+
+    <!-- Open Graph (Facebook, Reddit, Bluesky, LinkedIn) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="New-car shopping scatter" />
+    <meta property="og:title" content="New-car shopping — price vs. mileage vs. efficiency" />
+    <meta property="og:description" content="35 new & used cars on one interactive scatter plot, with Connecticut out-the-door pricing and annual running cost. Swap axes, filter models, normalize trims." />
+    <meta property="og:url" content="https://drewhoover.com/meris-new-car/" />
+    <meta property="og:image" content="https://drewhoover.com/meris-new-car/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="A scatter plot of cars by price and mileage, colored by powertrain." />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="New-car shopping — price vs. mileage vs. efficiency" />
+    <meta name="twitter:description" content="35 cars on one scatter plot with CT out-the-door pricing and running cost. Swap axes, filter, normalize trims." />
+    <meta name="twitter:image" content="https://drewhoover.com/meris-new-car/og.png" />
+
+    <!-- drewhoover.com cross-site chrome: back-bar + comments -->
+    <script src="https://drewhoover.com/embed/back-bar.js" async></script>
+    <script src="https://drewhoover.com/embed/giscus.js" async></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <div id="comments"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
