@@ -8,15 +8,17 @@ interface Props {
   yKey: string
   colorKey: ColorKey
   normalizeTrims: boolean
+  orientGood: boolean
   onXChange: (key: string) => void
   onYChange: (key: string) => void
   onColorChange: (key: ColorKey) => void
   onToggleNormalize: (on: boolean) => void
+  onToggleOrient: (on: boolean) => void
 }
 
 export default function Controls({
-  xKey, yKey, colorKey, normalizeTrims,
-  onXChange, onYChange, onColorChange, onToggleNormalize,
+  xKey, yKey, colorKey, normalizeTrims, orientGood,
+  onXChange, onYChange, onColorChange, onToggleNormalize, onToggleOrient,
 }: Props) {
   return (
     <section className="controls">
@@ -45,6 +47,15 @@ export default function Controls({
             <option key={o.key} value={o.key}>{o.label}</option>
           ))}
         </select>
+      </label>
+
+      <label className="control control--check" title="Orient both axes so the better choice is toward the top-right">
+        <input
+          type="checkbox"
+          checked={orientGood}
+          onChange={(e) => onToggleOrient(e.target.checked)}
+        />
+        <span>Better points up</span>
       </label>
 
       <label className="control control--check" title="Show a normalized Base/Mid/Upper/Top tier next to each car's real trim">

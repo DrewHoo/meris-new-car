@@ -133,7 +133,7 @@ header h1 { font-size: 34px; letter-spacing: -0.02em; margin: 0 0 12px; }
 .legend-swatch { width: 13px; height: 13px; border-radius: 3px; display: inline-block; }
 
 /* ── Assumptions ───────────────────────────────────────────────────── */
-.assumptions, .models-panel, .methodology {
+.assumptions, .models-panel, .methodology, .ranked {
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: 8px;
@@ -183,6 +183,39 @@ header h1 { font-size: 34px; letter-spacing: -0.02em; margin: 0 0 12px; }
 .model-miles { color: var(--fg-muted); min-width: 56px; text-align: right; font-variant-numeric: tabular-nums; }
 .model-otd { font-weight: 700; min-width: 64px; text-align: right; font-variant-numeric: tabular-nums; }
 
+/* ── Ranked heatmap table ──────────────────────────────────────────── */
+.ranked-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 14px; }
+.ranked-head h3 { margin: 0; font-size: 17px; }
+.ranked-sub { font-size: 12px; }
+
+.presets { display: flex; flex-wrap: wrap; align-items: center; gap: 7px; margin-bottom: 14px; }
+.presets-label { font-size: 12px; font-weight: 600; color: var(--fg-muted); }
+.preset { font-size: 12.5px; padding: 4px 11px; border: 1px solid var(--border-strong); border-radius: 999px; cursor: pointer; background: #fff; color: var(--fg-muted); }
+.preset--on { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); font-weight: 600; }
+
+.weights { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 22px; margin-bottom: 16px; }
+.weight { display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: 13px; }
+.weight--off { opacity: 0.5; }
+.weight-label { display: flex; flex-direction: column; line-height: 1.2; }
+.weight-dir { font-size: 10.5px; color: var(--fg-muted); }
+.weight-control { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+.weight-control input[type="range"] { width: 96px; }
+.weight-val { width: 24px; text-align: right; font-variant-numeric: tabular-nums; font-size: 12px; color: var(--fg-muted); }
+
+.ranked-table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: 6px; }
+.ranked-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.ranked-table th, .ranked-table td { padding: 6px 9px; border-bottom: 1px solid #f0f0f0; white-space: nowrap; }
+.ranked-table thead th { position: sticky; top: 0; background: #fafafa; font-weight: 600; color: var(--fg-muted); text-align: left; border-bottom: 1px solid var(--border); }
+.ranked-table th.num, .ranked-table td.num { text-align: right; font-variant-numeric: tabular-nums; }
+.ranked-table tbody tr:last-child td { border-bottom: none; }
+.rank-col { color: var(--fg-muted); width: 28px; text-align: right; font-variant-numeric: tabular-nums; }
+.car-col { white-space: normal; min-width: 150px; }
+.rt-name { display: block; font-weight: 600; }
+.rt-trim { display: block; font-size: 11.5px; color: var(--fg-muted); }
+.ranked-table td.heat { font-weight: 500; }
+.score-col { font-weight: 700; }
+.rt-empty { text-align: center; padding: 16px; }
+
 /* ── Methodology ───────────────────────────────────────────────────── */
 .methodology ul { margin: 0; padding-left: 18px; }
 .methodology li { margin-bottom: 10px; color: var(--fg-muted); }
@@ -203,6 +236,8 @@ header h1 { font-size: 34px; letter-spacing: -0.02em; margin: 0 0 12px; }
   .filter-label { width: 100%; }
   .model-meta { gap: 6px; }
   .model-miles { min-width: 44px; }
+  .weights { grid-template-columns: 1fr; gap: 6px 0; }
+  .weight-control input[type="range"] { width: 120px; }
 }
 
 @media (max-width: 420px) {

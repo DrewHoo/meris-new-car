@@ -64,6 +64,7 @@ export default function Tooltip({ car, xAxis, yAxis, normalizeTrims, left, top }
           ? <span>· {num(car.electricRange)} mi electric</span>
           : null}
         <span>· {num(car.cargoCuFt)} cu ft cargo</span>
+        <span>· {car.rearLegroomIn.toFixed(1)}" rear legroom</span>
         <span>· ~{money(car.annualEnergyCost)}/yr to fuel</span>
       </div>
 

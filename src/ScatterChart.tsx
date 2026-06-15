@@ -15,6 +15,8 @@ interface Props {
   yAxis: AxisOption
   colorFn: ColorFn
   normalizeTrims: boolean
+  /** Orient each axis so the "better" end is up (Y) / right (X). */
+  orientGood: boolean
 }
 
 interface PlotPoint {
@@ -31,7 +33,7 @@ function niceDomain(values: (number | undefined)[]): [number, number] {
   return [lo, hi]
 }
 
-export default function ScatterChart({ cars, xAxis, yAxis, colorFn, normalizeTrims }: Props) {
+export default function ScatterChart({ cars, xAxis, yAxis, colorFn, normalizeTrims, orientGood }: Props) {
   const containerRef = useRef<HTMLDivElement>(null)
   const [width, setWidth] = useState(900)
   const height = width < 600 ? 380 : 480
@@ -58,15 +60,26 @@ export default function ScatterChart({ cars, xAxis, yAxis, colorFn, normalizeTri
     [cars, xAxis, yAxis],
   )
 
+  // When orienting for "good", reverse the scale of a lower-is-better axis
+  // so its good end lands at the top (Y) / right (X). Reversing the d3 range
+  // keeps ticks, points, and hit-testing consistent automatically.
   const xScale = useMemo(() => {
     const domain = niceDomain(valid.map((c) => xAxis.accessor(c) ?? undefined))
-    return scaleLinear().domain(domain).nice().range([MARGIN.left, width - MARGIN.right])
-  }, [valid, xAxis, width])
+    const reverse = orientGood && xAxis.betterDirection === 'low'
+    const range: [number, number] = reverse
+      ? [width - MARGIN.right, MARGIN.left]
+      : [MARGIN.left, width - MARGIN.right]
+    return scaleLinear().domain(domain).nice().range(range)
+  }, [valid, xAxis, width, orientGood])
 
   const yScale = useMemo(() => {
     const domain = niceDomain(valid.map((c) => yAxis.accessor(c) ?? undefined))
-    return scaleLinear().domain(domain).nice().range([height - MARGIN.bottom, MARGIN.top])
-  }, [valid, yAxis, height])
+    const reverse = orientGood && yAxis.betterDirection === 'low'
+    const range: [number, number] = reverse
+      ? [MARGIN.top, height - MARGIN.bottom]
+      : [height - MARGIN.bottom, MARGIN.top]
+    return scaleLinear().domain(domain).nice().range(range)
+  }, [valid, yAxis, height, orientGood])
 
   const points: PlotPoint[] = useMemo(
     () =>
@@ -198,7 +211,7 @@ export default function ScatterChart({ cars, xAxis, yAxis, colorFn, normalizeTri
           fontWeight={600}
           fill="#444"
         >
-          {xAxis.label}
+          {xAxis.label}{orientGood ? ' · best at right' : ''}
         </text>
         <text
           transform={`translate(18, ${MARGIN.top + plotH / 2}) rotate(-90)`}
@@ -207,7 +220,7 @@ export default function ScatterChart({ cars, xAxis, yAxis, colorFn, normalizeTri
           fontWeight={600}
           fill="#444"
         >
-          {yAxis.label}
+          {yAxis.label}{orientGood ? ' · best at top' : ''}
         </text>
 
         {/* points (hovered drawn last so it sits on top) */}

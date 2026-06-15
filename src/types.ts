@@ -39,6 +39,8 @@ export interface Car {
   electricRange: number | null
   /** Cargo volume behind the rear seats (seats up), cubic feet. */
   cargoCuFt: number
+  /** Rear-seat legroom, inches — proxy for backseat space / bulky car-seat fit. */
+  rearLegroomIn: number
   bodyClass: BodyClass
   /** Per-car PHEV electric-mile fraction override; falls back to Assumptions.phevElectricFraction. */
   phevElectricFraction?: number

@@ -13,6 +13,8 @@ import ScatterChart from './ScatterChart'
 import Legend from './Legend'
 import AssumptionsPanel from './AssumptionsPanel'
 import ModelsPanel from './ModelsPanel'
+import RankedTable from './RankedTable'
+import type { Weights } from './scoring'
 import { TIER_EXPLAINER } from './lib/trimTiers'
 
 export default function App() {
@@ -27,6 +29,8 @@ export default function App() {
   const [tiers, setTiers] = useState<Set<number> | null>(initial.tiers)
   const [excluded, setExcluded] = useState<Set<string>>(initial.excluded)
   const [normalizeTrims, setNormalizeTrims] = useState(initial.normalizeTrims)
+  const [orientGood, setOrientGood] = useState(initial.orientGood)
+  const [weights, setWeights] = useState<Weights>(initial.weights)
   const [assumptions, setAssumptions] = useState<Assumptions>(initial.assumptions)
 
   // Single reactive recompute of all rows whenever an assumption changes.
@@ -61,13 +65,13 @@ export default function App() {
   // Mirror state into the URL so links are shareable. Omit defaults.
   useEffect(() => {
     const qs = buildSearch({
-      xKey, yKey, colorKey, makes, powertrains, condition, tiers, excluded, normalizeTrims, assumptions,
+      xKey, yKey, colorKey, makes, powertrains, condition, tiers, excluded, normalizeTrims, orientGood, weights, assumptions,
     })
     const next = qs ? `${window.location.pathname}?${qs}` : window.location.pathname
     if (next !== window.location.pathname + window.location.search) {
       window.history.replaceState(null, '', next)
     }
-  }, [xKey, yKey, colorKey, makes, powertrains, condition, tiers, excluded, normalizeTrims, assumptions])
+  }, [xKey, yKey, colorKey, makes, powertrains, condition, tiers, excluded, normalizeTrims, orientGood, weights, assumptions])
 
   // Structured analytics on axis/color changes (auto-pageview already fires
   // on every replaceState via mixpanel.init).
@@ -97,7 +101,8 @@ export default function App() {
         <h1>Which car should we buy?</h1>
         <p className="lede">
           {cars.length} new &amp; used cars on one chart — pick any two axes (price, mileage, year,
-          efficiency, running cost, cargo), color and filter them, and read true{' '}
+          efficiency, running cost, cargo, backseat space), color and filter them, or rank them in a
+          weighted table by what matters to you. Read true{' '}
           <strong>Connecticut out-the-door</strong> prices that update live as you change the tax,
           fee, gas, and electricity assumptions. Prices are researched estimates as of {asOf}.
         </p>
@@ -108,10 +113,12 @@ export default function App() {
         yKey={yKey}
         colorKey={colorKey}
         normalizeTrims={normalizeTrims}
+        orientGood={orientGood}
         onXChange={setXKey}
         onYChange={setYKey}
         onColorChange={setColorKey}
         onToggleNormalize={setNormalizeTrims}
+        onToggleOrient={setOrientGood}
       />
 
       <ScatterChart
@@ -120,11 +127,19 @@ export default function App() {
         yAxis={yAxis}
         colorFn={colorFn}
         normalizeTrims={normalizeTrims}
+        orientGood={orientGood}
       />
 
       <Legend colorKey={colorKey} colorLabel={colorLabel} cars={derived} />
 
       <AssumptionsPanel assumptions={assumptions} onChange={setAssumptions} />
+
+      <RankedTable
+        cars={visible}
+        weights={weights}
+        onWeightsChange={setWeights}
+        normalizeTrims={normalizeTrims}
+      />
 
       <ModelsPanel
         allCars={derived}
@@ -179,6 +194,14 @@ function Methodology() {
               </div>
             ))}
           </div>
+        </li>
+        <li>
+          <strong>Ranking and backseat space.</strong> The ranked table scores each car by
+          min–max-normalizing every criterion across your current filter and taking a weighted
+          average — tune the weight sliders or pick a preset. "Backseat space" is rear-seat legroom
+          (inches), the spec that most decides whether a bulky rear-facing car seat fits behind the
+          front passenger. "Better points up" orients both axes so the stronger choice sits toward
+          the top-right.
         </li>
         <li>
           <strong>Prices.</strong> Pre-tax selling prices are researched estimates ({asOf}) from

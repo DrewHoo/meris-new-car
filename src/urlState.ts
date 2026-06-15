@@ -2,6 +2,8 @@ import type { Assumptions, Car, Powertrain } from './types'
 import { AXIS_BY_KEY, COLOR_OPTIONS, DEFAULT_COLOR, DEFAULT_X, DEFAULT_Y } from './axes'
 import type { ColorKey } from './axes'
 import { DEFAULT_ASSUMPTIONS } from './lib/model'
+import { CRITERIA, DEFAULT_WEIGHTS } from './scoring'
+import type { Weights } from './scoring'
 
 export type ConditionFilter = 'all' | 'new' | 'used'
 
@@ -16,6 +18,8 @@ export interface UiState {
   tiers: Set<number> | null
   excluded: Set<string>
   normalizeTrims: boolean
+  orientGood: boolean
+  weights: Weights
   assumptions: Assumptions
 }
 
@@ -33,7 +37,8 @@ export function readInitialState(cars: Car[]): UiState {
   const empty: UiState = {
     xKey: DEFAULT_X, yKey: DEFAULT_Y, colorKey: DEFAULT_COLOR,
     makes: null, powertrains: null, condition: 'all', tiers: null,
-    excluded: new Set(), normalizeTrims: false, assumptions: { ...DEFAULT_ASSUMPTIONS },
+    excluded: new Set(), normalizeTrims: false, orientGood: true,
+    weights: { ...DEFAULT_WEIGHTS }, assumptions: { ...DEFAULT_ASSUMPTIONS },
   }
   if (typeof window === 'undefined') return empty
 
@@ -62,6 +67,19 @@ export function readInitialState(cars: Car[]): UiState {
 
   const excluded = new Set(csv('ex').filter((id) => knownIds.has(id)))
   const normalizeTrims = p.get('tn') === '1'
+  const orientGood = p.get('og') !== '0'
+
+  const weights: Weights = { ...DEFAULT_WEIGHTS }
+  const wRaw = p.get('w')
+  if (wRaw) {
+    for (const part of wRaw.split('.')) {
+      const [k, v] = part.split('-')
+      const val = Number(v)
+      if (CRITERIA.some((c) => c.key === k) && Number.isFinite(val) && val >= 0 && val <= 10) {
+        weights[k] = Math.round(val)
+      }
+    }
+  }
 
   const assumptions: Assumptions = {
     annualMiles: num(p, 'am', DEFAULT_ASSUMPTIONS.annualMiles, 1000, 60000),
@@ -75,7 +93,7 @@ export function readInitialState(cars: Car[]): UiState {
     phevElectricFraction: DEFAULT_ASSUMPTIONS.phevElectricFraction,
   }
 
-  return { xKey, yKey, colorKey, makes, powertrains, condition, tiers, excluded, normalizeTrims, assumptions }
+  return { xKey, yKey, colorKey, makes, powertrains, condition, tiers, excluded, normalizeTrims, orientGood, weights, assumptions }
 }
 
 /** Build the query string for the current state, omitting anything at its default. */
@@ -93,6 +111,12 @@ export function buildSearch(s: UiState): string {
   if (s.tiers) p.set('tt', [...s.tiers].sort().join(','))
   if (s.excluded.size) p.set('ex', [...s.excluded].sort().join(','))
   if (s.normalizeTrims) p.set('tn', '1')
+  if (!s.orientGood) p.set('og', '0')
+
+  const changedWeights = CRITERIA
+    .filter((c) => (s.weights[c.key] ?? 0) !== DEFAULT_WEIGHTS[c.key])
+    .map((c) => `${c.key}-${s.weights[c.key] ?? 0}`)
+  if (changedWeights.length) p.set('w', changedWeights.join('.'))
 
   if (a.annualMiles !== d.annualMiles) p.set('am', String(a.annualMiles))
   if (a.salesTaxPct !== d.salesTaxPct) p.set('tax', String(+(a.salesTaxPct * 100).toFixed(3)))
