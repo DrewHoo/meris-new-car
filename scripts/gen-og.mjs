@@ -49,7 +49,7 @@ const svg = `
 
   <text x="64" y="150" font-family="Helvetica, Arial, sans-serif" font-size="62" font-weight="700" fill="${TEXT}">Which car</text>
   <text x="64" y="222" font-family="Helvetica, Arial, sans-serif" font-size="62" font-weight="700" fill="${TEXT}">should we buy?</text>
-  <text x="66" y="288" font-family="Helvetica, Arial, sans-serif" font-size="25" fill="${MUTED}">35 new &amp; used cars · price vs. mileage</text>
+  <text x="66" y="288" font-family="Helvetica, Arial, sans-serif" font-size="25" fill="${MUTED}">40+ new &amp; used cars · price vs. mileage</text>
   <text x="66" y="324" font-family="Helvetica, Arial, sans-serif" font-size="25" fill="${MUTED}">vs. efficiency, with CT out-the-door pricing.</text>
   <text x="66" y="392" font-family="Helvetica, Arial, sans-serif" font-size="21" fill="#2563eb">Swap axes · filter models · normalize trims</text>
 

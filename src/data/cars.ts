@@ -184,6 +184,66 @@ export const cars: Car[] = [
     sourceNote: "Subaru's battery EV (NOT a hybrid). EPA fueleconomy.gov #46030: 104 MPGe, 31 kWh/100mi, 228 mi. 6+ NE/CT comps cluster $21-23k; slow-selling EV ×0.93 → ~$20,800 (heavy EV depreciation, below earlier $27k seed). As of June 2026.",
   },
 
+  // ── Subaru Crosstrek (gas, AWD) ──────────────────────────────────────
+  {
+    id: 'crosstrek-2018-82k', make: 'Subaru', model: 'Crosstrek', trim: 'Premium', trimTier: 2,
+    year: 2018, condition: 'used', mileage: 82000, powertrain: 'gas',
+    sellingPrice: 16400, combinedMpg: 29, combinedMpge: 29, evKwhPer100mi: null,
+    electricRange: null, cargoCuFt: 20.8, bodyClass: 'compact-suv',
+    sourceNote: '2018 Crosstrek 2.0i Premium AWD ~82k mi. CT/Hartford comps $15.5-18k; median asking ~$17.6k, older high-mile ×0.93 → $16,400 (Subaru holds value in NE). EPA AWD 29 combined. As of June 2026.',
+  },
+  {
+    id: 'crosstrek-2020-58k', make: 'Subaru', model: 'Crosstrek', trim: 'Premium', trimTier: 2,
+    year: 2020, condition: 'used', mileage: 58000, powertrain: 'gas',
+    sellingPrice: 20400, combinedMpg: 29, combinedMpge: 29, evKwhPer100mi: null,
+    electricRange: null, cargoCuFt: 20.8, bodyClass: 'compact-suv',
+    sourceNote: '2020 Crosstrek Premium AWD ~58k mi. CARFAX 2020 avg selling ~$20,000 (national), CT/NE +2-4%; median asking ~$21.5k ×0.95 → $20,400. EPA AWD 29 combined. As of June 2026.',
+  },
+  {
+    id: 'crosstrek-2022-38k', make: 'Subaru', model: 'Crosstrek', trim: 'Premium', trimTier: 2,
+    year: 2022, condition: 'used', mileage: 38000, powertrain: 'gas',
+    sellingPrice: 22800, combinedMpg: 29, combinedMpge: 29, evKwhPer100mi: null,
+    electricRange: null, cargoCuFt: 20.8, bodyClass: 'compact-suv',
+    sourceNote: '2022 Crosstrek Premium AWD ~38k mi. CarGurus CT (North Haven) $24,694 @24.5k; CARFAX 2022 avg ~$23k. Median asking ~$24.0k ×0.95 → $22,800. EPA AWD 29 combined. As of June 2026.',
+  },
+  {
+    id: 'crosstrek-2024-18k', make: 'Subaru', model: 'Crosstrek', trim: 'Premium', trimTier: 2,
+    year: 2024, condition: 'used', mileage: 18000, powertrain: 'gas',
+    sellingPrice: 24900, combinedMpg: 29, combinedMpge: 29, evKwhPer100mi: null,
+    electricRange: null, cargoCuFt: 20.0, bodyClass: 'compact-suv',
+    sourceNote: '2024 Crosstrek Premium AWD ~18k mi (current gen). Median asking ~$27.0k ×0.96 → ~$25.9k; nudged to $24,900 to sit below the same-era Crosstrek PHEV. EPA AWD 29 combined. As of June 2026.',
+  },
+
+  // ── Subaru Forester (gas, AWD) ───────────────────────────────────────
+  {
+    id: 'forester-2018-88k', make: 'Subaru', model: 'Forester', trim: 'Premium', trimTier: 2,
+    year: 2018, condition: 'used', mileage: 88000, powertrain: 'gas',
+    sellingPrice: 16000, combinedMpg: 28, combinedMpge: 28, evKwhPer100mi: null,
+    electricRange: null, cargoCuFt: 31.5, bodyClass: 'compact-suv',
+    sourceNote: '2018 Forester 2.5i Premium AWD ~88k mi (4th gen). CT comps $14.5-17.2k; median asking ~$17.2k, older high-mile ×0.93 → $16,000. EPA AWD 28 combined (26/32). Cargo 31.5 cu ft. As of June 2026.',
+  },
+  {
+    id: 'forester-2020-60k', make: 'Subaru', model: 'Forester', trim: 'Premium', trimTier: 2,
+    year: 2020, condition: 'used', mileage: 60000, powertrain: 'gas',
+    sellingPrice: 20700, combinedMpg: 29, combinedMpge: 29, evKwhPer100mi: null,
+    electricRange: null, cargoCuFt: 28.9, bodyClass: 'compact-suv',
+    sourceNote: '2020 Forester Premium AWD ~60k mi (5th gen). CT comps; Edmunds Hartford avg list $19,537; median Premium asking ~$21.8k ×0.95 → $20,700. EPA AWD 29 combined (26/33). Cargo 28.9 cu ft. As of June 2026.',
+  },
+  {
+    id: 'forester-2022-40k', make: 'Subaru', model: 'Forester', trim: 'Premium', trimTier: 2,
+    year: 2022, condition: 'used', mileage: 40000, powertrain: 'gas',
+    sellingPrice: 23000, combinedMpg: 29, combinedMpge: 29, evKwhPer100mi: null,
+    electricRange: null, cargoCuFt: 28.9, bodyClass: 'compact-suv',
+    sourceNote: '2022 Forester Premium AWD ~40k mi. CarGurus NE comps $23,600-$24,990; median asking ~$23.9k ×0.96 → $23,000. EPA AWD 29 combined (26/33). Cargo 28.9 cu ft. As of June 2026.',
+  },
+  {
+    id: 'forester-2024-20k', make: 'Subaru', model: 'Forester', trim: 'Premium', trimTier: 2,
+    year: 2024, condition: 'used', mileage: 20000, powertrain: 'gas',
+    sellingPrice: 28300, combinedMpg: 29, combinedMpge: 29, evKwhPer100mi: null,
+    electricRange: null, cargoCuFt: 28.9, bodyClass: 'compact-suv',
+    sourceNote: '2024 Forester Premium AWD ~20k mi. CarGurus 2024 avg $30,085; median Premium asking ~$29.5k ×0.96 → $28,300. EPA AWD 29 combined (26/33). Cargo 28.9 cu ft. As of June 2026.',
+  },
+
   // ── Honda CR-V (gas) ─────────────────────────────────────────────────
   {
     id: 'crv-2018-78k', make: 'Honda', model: 'CR-V', trim: 'EX', trimTier: 1,
