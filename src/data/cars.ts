@@ -25,6 +25,43 @@ export const cars: Car[] = [
     sourceNote: 'ANCHOR: sellingPrice back-derived so CT out-the-door rounds to the stated $26,000 at default tax/doc/reg ($26,000.10). A touch above typical CT market (CarGurus/KBB asking ~$22,700, selling ~$21,600). EPA fueleconomy.gov #46008: 113 MPGe, 253 mi range, 29 kWh/100mi. As of June 2026.',
   },
 
+  // ── Kia Niro Hybrid (HEV — conventional hybrid, not the EV/PHEV) ─────
+  {
+    id: 'niro-hybrid-2018-78k', make: 'Kia', model: 'Niro Hybrid', trim: 'LX', trimTier: 1,
+    year: 2018, condition: 'used', mileage: 78000, powertrain: 'hybrid',
+    sellingPrice: 11600, combinedMpg: 50, combinedMpge: 50, evKwhPer100mi: null,
+    electricRange: null, cargoCuFt: 19.4, rearLegroomIn: 37.4, bodyClass: 'compact-suv',
+    sourceNote: '1st-gen (2017-2022) Niro HEV, base LX. CT/NE comps $10-12.5k; median asking ~$12,500 ×0.93 → $11,600. EPA 50 combined; cargo 19.4 cu ft; rear legroom 37.4". As of June 2026.',
+  },
+  {
+    id: 'niro-hybrid-2020-52k', make: 'Kia', model: 'Niro Hybrid', trim: 'EX', trimTier: 2,
+    year: 2020, condition: 'used', mileage: 52000, powertrain: 'hybrid',
+    sellingPrice: 16900, combinedMpg: 50, combinedMpge: 50, evKwhPer100mi: null,
+    electricRange: null, cargoCuFt: 19.4, rearLegroomIn: 37.4, bodyClass: 'compact-suv',
+    sourceNote: '1st-gen Niro HEV, mid EX (standard wheels → full 50 mpg). CT/NE asking ~$17,800 ×0.95 → $16,900. EPA 50 combined; cargo 19.4 cu ft; rear legroom 37.4". As of June 2026.',
+  },
+  {
+    id: 'niro-hybrid-2022-34k', make: 'Kia', model: 'Niro Hybrid', trim: 'Touring', trimTier: 3,
+    year: 2022, condition: 'used', mileage: 34000, powertrain: 'hybrid',
+    sellingPrice: 21900, combinedMpg: 43, combinedMpge: 43, evKwhPer100mi: null,
+    electricRange: null, cargoCuFt: 19.4, rearLegroomIn: 37.4, bodyClass: 'compact-suv',
+    sourceNote: 'Final 1st-gen year Niro HEV, top Touring — 43 combined (larger wheels) vs 50 for base trims. CT comps ~$23,000 asking ×0.95 → $21,900. Cargo 19.4 cu ft; rear legroom 37.4". As of June 2026.',
+  },
+  {
+    id: 'niro-hybrid-2023-28k', make: 'Kia', model: 'Niro Hybrid', trim: 'EX', trimTier: 2,
+    year: 2023, condition: 'used', mileage: 28000, powertrain: 'hybrid',
+    sellingPrice: 23300, combinedMpg: 53, combinedMpge: 53, evKwhPer100mi: null,
+    electricRange: null, cargoCuFt: 22.8, rearLegroomIn: 36.9, bodyClass: 'compact-suv',
+    sourceNote: '2nd-gen (2023+ redesign) Niro HEV, EX (16" wheels → 53 combined). CT comps (Branford) ~$24,500 asking ×0.95 → $23,300. Roomier 2nd gen: cargo 22.8 cu ft; rear legroom 36.9" (matches the 2nd-gen Niro EV). As of June 2026.',
+  },
+  {
+    id: 'niro-hybrid-2024-16k', make: 'Kia', model: 'Niro Hybrid', trim: 'SX Touring', trimTier: 4,
+    year: 2024, condition: 'used', mileage: 16000, powertrain: 'hybrid',
+    sellingPrice: 27200, combinedMpg: 49, combinedMpge: 49, evKwhPer100mi: null,
+    electricRange: null, cargoCuFt: 22.8, rearLegroomIn: 36.9, bodyClass: 'compact-suv',
+    sourceNote: '2nd-gen Niro HEV, top SX Touring (18" wheels → 49 combined vs 53 for EX). Low-mile CT/NE asking ~$28,000 ×0.97 → $27,200. Cargo 22.8 cu ft; rear legroom 36.9". As of June 2026.',
+  },
+
   // ── Toyota Prius ─────────────────────────────────────────────────────
   {
     id: 'prius-le-2026-new', rearLegroomIn: 34.8, make: 'Toyota', model: 'Prius', trim: 'LE', trimTier: 1,
@@ -304,6 +341,20 @@ export const cars: Car[] = [
     sellingPrice: 34790, combinedMpg: 48, combinedMpge: 48, evKwhPer100mi: null,
     electricRange: null, cargoCuFt: 24.5, bodyClass: 'hatchback',
     sourceNote: 'New 2026 Sport Touring Hybrid: MSRP $33,595 + $1,195 dest = $34,790 (matches Hoffman Honda Hartford). Transacts at MSRP. EPA 48 combined (carryover). As of June 2026.',
+  },
+  {
+    id: 'civic-hb-hybrid-2025-st-9k', make: 'Honda', model: 'Civic Hatchback Hybrid', trim: 'Sport Touring Hybrid', trimTier: 3,
+    year: 2025, condition: 'used', mileage: 9000, powertrain: 'hybrid',
+    sellingPrice: 29000, combinedMpg: 48, combinedMpge: 48, evKwhPer100mi: null,
+    electricRange: null, cargoCuFt: 24.5, rearLegroomIn: 37.4, bodyClass: 'hatchback',
+    sourceNote: 'Top hatch-hybrid trim, ~9k mi. CT/NE comps asking $28.6-29.9k; nudged to $29,000 to sit above the base Sport used ($28,300). EPA 48 combined; cargo 24.5 cu ft; rear legroom 37.4". As of June 2026.',
+  },
+  {
+    id: 'civic-hb-hybrid-2026-sport-new', make: 'Honda', model: 'Civic Hatchback Hybrid', trim: 'Sport Hybrid', trimTier: 2,
+    year: 2026, condition: 'new', mileage: 0, powertrain: 'hybrid',
+    sellingPrice: 31800, combinedMpg: 48, combinedMpge: 48, evKwhPer100mi: null,
+    electricRange: null, cargoCuFt: 24.5, rearLegroomIn: 37.4, bodyClass: 'hatchback',
+    sourceNote: 'New base hatch-hybrid trim: MSRP $30,595 + $1,195 dest = $31,790 → $31,800 (transacts at MSRP). Hatch hybrid lineup is only Sport + Sport Touring. EPA 48 combined; cargo 24.5 cu ft; rear legroom 37.4". As of June 2026.',
   },
 
   // ── Toyota RAV4 (gas) ────────────────────────────────────────────────
