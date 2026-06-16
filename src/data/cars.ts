@@ -606,4 +606,62 @@ export const cars: Car[] = [
     sourceUrl: "https://www.carvana.com/vehicle/3734208",
     sourceNote: "90k+ bucket. Real Carvana listing: 2017 Mazda CX-5 Grand Touring (AWD), 108,278 mi, listed $17,590 (Carvana no-haggle, pre-tax; rounded to $17,600). Specific vehicle page confirmed via search; chosen as the high-mileage example with a real vehicle ID (a 2017 Sport in this bucket showed as sold). 2.5L AWD ~26 mpg; 2017-2021 cargo 30.8. As of June 2026.",
   },
+
+  // ── Hyundai Ioniq 5 ──
+  {
+    id: 'ioniq-5-2024-11k', make: "Hyundai", model: "Ioniq 5", trim: "SEL AWD", trimTier: 2,
+    year: 2024, condition: 'used', mileage: 10792, powertrain: 'ev',
+    sellingPrice: 32000, combinedMpg: null, combinedMpge: 98, evKwhPer100mi: 34,
+    electricRange: 260, cargoCuFt: 27.2, rearLegroomIn: 39.4, bodyClass: "compact-suv",
+    sourceName: "Hyundai Certified (CPO) — Lia Hyundai of Hartford, Hartford CT",
+    sourceUrl: "https://www.liahyundaiofhartford.com/hyundai-ioniq5-for-sale",
+    sourceNote: "Checked Carvana + Lia Hyundai of Hartford (verified real CT dealer). Hyundai Certified Pre-Owned 2024 Ioniq 5 SEL AWD, 10,792 mi, listed $31,995 (rounded $32,000), no accident/damage history, certified 10yr/100k mi. 0-30k mile bucket. Specs from fueleconomy.gov 2024 Ioniq 5 AWD Long Range: 98 combined MPGe, 34 kWh/100mi, ~260 mi range. As of June 2026.",
+  },
+  {
+    id: 'ioniq-5-2022-58k', make: "Hyundai", model: "Ioniq 5", trim: "Limited AWD", trimTier: 3,
+    year: 2022, condition: 'used', mileage: 58000, powertrain: 'ev',
+    sellingPrice: 24990, combinedMpg: null, combinedMpge: 98, evKwhPer100mi: 34,
+    electricRange: 256, cargoCuFt: 27.2, rearLegroomIn: 39.4, bodyClass: "compact-suv",
+    sourceName: "Carvana",
+    sourceUrl: "https://www.carvana.com/cars/hyundai-ioniq-5-limited",
+    sourceNote: "Checked Carvana (no-haggle). 2022 Ioniq 5 Limited (AWD standard) with 58k mi listed $24,990 in Carvana search results. 30-60k mile bucket. Listing pages 403 on direct fetch; price/mileage/trim read from search-result snippets. Specs from fueleconomy.gov 2022 Ioniq 5 AWD Long Range: 98 combined MPGe, 34 kWh/100mi, 256 mi range. As of June 2026.",
+  },
+  {
+    id: 'ioniq-5-2022-70k', make: "Hyundai", model: "Ioniq 5", trim: "SEL RWD", trimTier: 2,
+    year: 2022, condition: 'used', mileage: 70450, powertrain: 'ev',
+    sellingPrice: 24990, combinedMpg: null, combinedMpge: 114, evKwhPer100mi: 30,
+    electricRange: 303, cargoCuFt: 27.2, rearLegroomIn: 39.4, bodyClass: "compact-suv",
+    sourceName: "Carvana",
+    sourceUrl: "https://www.carvana.com/vehicle/3166351",
+    sourceNote: "Checked Carvana (no-haggle). Confirmed real listing: 2022 Ioniq 5 SEL Sport Utility 4D (RWD Long Range), 70,450 mi, $24,990, carvana.com/vehicle/3166351. High-mile 60-90k bucket. Listing pages 403 on direct fetch; price/mileage/trim read from search-result snippets. Specs from fueleconomy.gov 2022 Ioniq 5 RWD Long Range: 114 combined MPGe, 30 kWh/100mi, 303 mi range. As of June 2026.",
+  },
+
+  // ── Hyundai Tucson Hybrid ──
+  {
+    id: 'tucson-hybrid-2024-17k', make: "Hyundai", model: "Tucson Hybrid", trim: "N Line", trimTier: 3,
+    year: 2024, condition: 'used', mileage: 16791, powertrain: 'hybrid',
+    sellingPrice: 32000, combinedMpg: 35, combinedMpge: 35, evKwhPer100mi: null,
+    electricRange: null, cargoCuFt: 38.7, rearLegroomIn: 41.3, bodyClass: "compact-suv",
+    sourceName: "Carvana",
+    sourceUrl: "https://www.carvana.com/vehicle/3295695",
+    sourceNote: "Checked Carvana, Lia Hyundai of Hartford CPO, Key Hyundai of Manchester. 0-30k mi bucket: real Carvana listing (vehicle 3295695), 2024 Tucson Hybrid N Line, 16,791 mi, listed $31,990 (rounded to $32,000), AWD standard. fueleconomy.gov 2024 Tucson Hybrid N Line AWD = 35 combined mpg (HEV: mpge=mpg). As of June 2026.",
+  },
+  {
+    id: 'tucson-hybrid-2023-34k', make: "Hyundai", model: "Tucson Hybrid", trim: "SEL Convenience", trimTier: 2,
+    year: 2023, condition: 'used', mileage: 34000, powertrain: 'hybrid',
+    sellingPrice: 27600, combinedMpg: 37, combinedMpge: 37, evKwhPer100mi: null,
+    electricRange: null, cargoCuFt: 38.7, rearLegroomIn: 41.3, bodyClass: "compact-suv",
+    sourceName: "Carvana",
+    sourceUrl: "https://www.carvana.com/cars/hyundai-tucson-hybrid",
+    sourceNote: "Checked Carvana, Lia Hyundai of Hartford CPO, Key Hyundai of Manchester. 30-60k mi bucket: real Carvana listing, 2023 Tucson Hybrid SEL Convenience, ~34k mi, listed $27,590 (rounded to $27,600), AWD standard. fueleconomy.gov 2023 Tucson Hybrid SEL Convenience/Limited AWD = 37 combined mpg (HEV: mpge=mpg). As of June 2026.",
+  },
+  {
+    id: 'tucson-hybrid-2022-66k', make: "Hyundai", model: "Tucson Hybrid", trim: "Blue", trimTier: 1,
+    year: 2022, condition: 'used', mileage: 66000, powertrain: 'hybrid',
+    sellingPrice: 22000, combinedMpg: 38, combinedMpge: 38, evKwhPer100mi: null,
+    electricRange: null, cargoCuFt: 38.7, rearLegroomIn: 41.3, bodyClass: "compact-suv",
+    sourceName: "Carvana",
+    sourceUrl: "https://www.carvana.com/cars/hyundai-tucson-hybrid-blue",
+    sourceNote: "Checked Carvana, Lia Hyundai of Hartford CPO, Key Hyundai of Manchester. 60-90k mi bucket (high-mile 2022): real Carvana listing, 2022 Tucson Hybrid Blue, 66k mi, listed $21,990 (rounded to $22,000), AWD standard. fueleconomy.gov 2022 Tucson Hybrid Blue AWD = 38 combined mpg (HEV: mpge=mpg). As of June 2026.",
+  },
 ]
