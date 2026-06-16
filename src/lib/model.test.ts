@@ -35,7 +35,7 @@ describe('computeAnnualEnergyCost', () => {
     id: 't', make: 'X', model: 'Y', trim: '', trimTier: 1, year: 2024,
     condition: 'used', mileage: 0, powertrain: 'gas', sellingPrice: 0,
     combinedMpg: null, combinedMpge: null, evKwhPer100mi: null,
-    electricRange: null, cargoCuFt: 0, rearLegroomIn: 0, bodyClass: 'compact', sourceNote: '',
+    electricRange: null, cargoCuFt: 0, rearLegroomIn: 0, bodyClass: 'compact', sourceName: 'test', sourceNote: '',
     ...over,
   })
 

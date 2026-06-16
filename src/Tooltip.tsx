@@ -68,6 +68,7 @@ export default function Tooltip({ car, xAxis, yAxis, normalizeTrims, left, top }
         <span>· ~{money(car.annualEnergyCost)}/yr to fuel</span>
       </div>
 
+      <div className="tt-via">via {car.sourceName}{car.sourceUrl ? ' (open in the list below ↓)' : ''}</div>
       <div className="tt-source">{car.sourceNote}</div>
     </div>
   )

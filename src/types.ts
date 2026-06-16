@@ -44,6 +44,10 @@ export interface Car {
   bodyClass: BodyClass
   /** Per-car PHEV electric-mile fraction override; falls back to Assumptions.phevElectricFraction. */
   phevElectricFraction?: number
+  /** Where the price/listing came from, e.g. "Carvana", "Honda Certified (CPO)", "Owner quote". */
+  sourceName: string
+  /** Link to the listing, when one is available. */
+  sourceUrl?: string
   /** Provenance + assumptions for sellingPrice and specs. */
   sourceNote: string
 }

@@ -124,6 +124,7 @@ header h1 { font-size: 34px; letter-spacing: -0.02em; margin: 0 0 12px; }
 .otd-total td { font-weight: 700; border-top: 1px solid var(--border); padding-top: 3px; }
 
 .tt-stats { display: flex; flex-wrap: wrap; gap: 4px; color: var(--fg-muted); margin-bottom: 6px; }
+.tt-via { font-size: 11px; color: var(--accent); margin-bottom: 3px; }
 .tt-source { font-size: 10.5px; color: #8a8a8a; line-height: 1.35; }
 
 /* ── Legend ────────────────────────────────────────────────────────── */
@@ -179,9 +180,13 @@ header h1 { font-size: 34px; letter-spacing: -0.02em; margin: 0 0 12px; }
 .model-swatch { width: 11px; height: 11px; border-radius: 3px; flex-shrink: 0; }
 .model-name { font-size: 13.5px; display: flex; flex-direction: column; line-height: 1.25; min-width: 0; }
 .model-trim { font-size: 11.5px; color: var(--fg-muted); }
-.model-meta { display: flex; align-items: center; gap: 9px; flex-shrink: 0; font-size: 12.5px; }
+.model-meta { display: flex; flex-direction: column; align-items: flex-end; gap: 3px; flex-shrink: 0; font-size: 12.5px; }
+.model-meta-top { display: flex; align-items: center; gap: 9px; }
 .model-miles { color: var(--fg-muted); min-width: 56px; text-align: right; font-variant-numeric: tabular-nums; }
 .model-otd { font-weight: 700; min-width: 64px; text-align: right; font-variant-numeric: tabular-nums; }
+.model-src { font-size: 11px; color: var(--accent); text-decoration: none; white-space: nowrap; }
+.model-src:hover { text-decoration: underline; }
+.model-src--plain { color: var(--fg-muted); }
 
 /* ── Ranked heatmap table ──────────────────────────────────────────── */
 .ranked-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 14px; }

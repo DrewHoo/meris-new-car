@@ -148,9 +148,14 @@ export default function ModelsPanel({
                   </span>
                 </label>
                 <span className="model-meta">
-                  <span className={`badge badge--${c.condition}`}>{c.condition}</span>
-                  <span className="model-miles">{c.mileage === 0 ? 'new' : `${num(c.mileage)} mi`}</span>
-                  <span className="model-otd">{money(c.otd)}</span>
+                  <span className="model-meta-top">
+                    <span className={`badge badge--${c.condition}`}>{c.condition}</span>
+                    <span className="model-miles">{c.mileage === 0 ? 'new' : `${num(c.mileage)} mi`}</span>
+                    <span className="model-otd">{money(c.otd)}</span>
+                  </span>
+                  {c.sourceUrl
+                    ? <a className="model-src" href={c.sourceUrl} target="_blank" rel="noreferrer" onClick={(e) => e.stopPropagation()}>{c.sourceName} ↗</a>
+                    : <span className="model-src model-src--plain">{c.sourceName}</span>}
                 </span>
               </li>
             )
