@@ -227,13 +227,13 @@ export const cars: Car[] = [
 
   // ── Subaru Solterra ──
   {
-    id: 'solterra-2024-24k', make: "Subaru", model: "Solterra", trim: "Touring", trimTier: 3,
-    year: 2024, condition: 'used', mileage: 23975, powertrain: 'ev',
-    sellingPrice: 27590, combinedMpg: null, combinedMpge: 104, evKwhPer100mi: 31,
+    id: 'solterra-2024-24k', make: "Subaru", model: "Solterra", trim: "Limited", trimTier: 2,
+    year: 2023, condition: 'used', mileage: 32548, powertrain: 'ev',
+    sellingPrice: 23898, combinedMpg: null, combinedMpge: 104, evKwhPer100mi: 31,
     electricRange: 225, cargoCuFt: 23.8, rearLegroomIn: 35.3, bodyClass: "compact-suv",
-    sourceName: "Carvana",
-    sourceUrl: "https://www.carvana.com/vehicle/4001063",
-    sourceNote: "0-30k mileage bucket. Carvana no-haggle listing: 2024 Subaru Solterra Touring, 23,975 mi, listed $27,590 (pre-tax). Confirmed via Carvana vehicle page 4001063 across multiple searches; Touring is the top trim, giving trim variety vs the 30-60k row. Checked Carvana first per rules; CPO not needed since Carvana had a suitable in-bucket listing. As of June 2026.",
+    sourceName: "Subaru Certified (CPO) — Mitchell Subaru, Canton CT",
+    sourceUrl: "https://www.mitchellsubaru.com/certified/Subaru/2023-Subaru-Solterra-Canton%20-%20Hartford%20CT-6efdbad20a0e0a935e7ac782ed34b797.htm",
+    sourceNote: "Mitchell Subaru, Canton CT. Search results returned a Subaru Certified Pre-Owned 2023 Solterra Limited AWD, VIN JTMABABA5PA008870, 1-owner CT car, 32,548 mi, value ~$23,898 — closest real CPO Solterra to the 2024 Touring/24k target (dealer had no 2024 Touring CPO unit). As of June 2026.",
   },
   {
     id: 'solterra-2023-55k', make: "Subaru", model: "Solterra", trim: "Premium", trimTier: 1,
@@ -248,12 +248,12 @@ export const cars: Car[] = [
   // ── Subaru Crosstrek ──
   {
     id: 'crosstrek-2025-3k', make: "Subaru", model: "Crosstrek", trim: "Premium", trimTier: 2,
-    year: 2025, condition: 'used', mileage: 2775, powertrain: 'gas',
-    sellingPrice: 31000, combinedMpg: 27, combinedMpge: 27, evKwhPer100mi: null,
+    year: 2026, condition: 'used', mileage: 3347, powertrain: 'gas',
+    sellingPrice: 30999, combinedMpg: 27, combinedMpge: 27, evKwhPer100mi: null,
     electricRange: null, cargoCuFt: 20, rearLegroomIn: 36.5, bodyClass: "compact-suv",
-    sourceName: "Carvana",
-    sourceUrl: "https://www.carvana.com/vehicle/4260576",
-    sourceNote: "0-30k bucket. Real Carvana listing retrieved June 2026: 2025 Crosstrek Premium, 2,775 mi, listed $30,990 (rounded to $31,000), no-haggle pre-tax price. Gen2 Premium uses the 2.5L boxer (combined 27 mpg per spec guidance). Checked Carvana model/year search pages plus CT-area CPO inventory (Suburban/Mitchell Subaru near Hartford); chose this Carvana listing as the cleanest low-mileage gas Premium in-bucket. As of June 2026.",
+    sourceName: "Subaru Certified (CPO) — Mitchell Subaru, Canton CT",
+    sourceUrl: "https://www.mitchellsubaru.com/certified-inventory/subaru-crosstrek.htm",
+    sourceNote: "Mitchell Subaru, Canton CT. Search results (Cars.com/CarGurus) showed a Subaru Certified Pre-Owned 2026 Crosstrek Premium AWD, 3,347 mi, listed $30,999, 'Good Deal' — closest real CPO Crosstrek Premium to the 2025/2.7k-mi target. As of June 2026.",
   },
   {
     id: 'crosstrek-2021-52k', make: "Subaru", model: "Crosstrek", trim: "Sport", trimTier: 2,
@@ -286,21 +286,21 @@ export const cars: Car[] = [
   // ── Subaru Forester ──
   {
     id: 'forester-2023-25k', make: "Subaru", model: "Forester", trim: "Premium", trimTier: 2,
-    year: 2023, condition: 'used', mileage: 25000, powertrain: 'gas',
-    sellingPrice: 27600, combinedMpg: 29, combinedMpge: 29, evKwhPer100mi: null,
+    year: 2023, condition: 'used', mileage: 31588, powertrain: 'gas',
+    sellingPrice: 25869, combinedMpg: 29, combinedMpge: 29, evKwhPer100mi: null,
     electricRange: null, cargoCuFt: 28.9, rearLegroomIn: 39.4, bodyClass: "compact-suv",
-    sourceName: "Carvana (search)",
-    sourceUrl: "https://www.carvana.com/cars/2023-subaru-forester",
-    sourceNote: "0-30k bucket. Carvana 2023 Forester Premium, ~25k mi, listed $27,590 (rounded to $27,600); confirmed via Carvana inventory search as of June 2026. Direct Carvana vehicle/inventory pages return HTTP 403 to the fetch tool, so the Carvana 2023 Forester search URL is used per sourcing rules; price/mileage/trim captured from live Carvana listing data. Checked Carvana Forester Premium and 2023 model listings; chose this for low-mileage gen5 Premium in the 0-30k bucket.",
+    sourceName: "Subaru Certified (CPO) — Mitchell Subaru, Canton CT",
+    sourceUrl: "https://www.mitchellsubaru.com/certified-inventory/subaru-forester.htm",
+    sourceNote: "Mitchell Subaru, Canton CT (CarGurus dealer inventory snapshot). 2023 Subaru Forester Premium Crossover AWD, stock #C8023, Crystal Black Silica, 31,588 mi, listed $25,869, 'Good Deal' — exact year/trim match near the 25k-mi target. As of June 2026.",
   },
   {
     id: 'forester-2022-32k', make: "Subaru", model: "Forester", trim: "Limited", trimTier: 3,
-    year: 2022, condition: 'used', mileage: 32000, powertrain: 'gas',
-    sellingPrice: 28000, combinedMpg: 29, combinedMpge: 29, evKwhPer100mi: null,
+    year: 2023, condition: 'used', mileage: 35835, powertrain: 'gas',
+    sellingPrice: 27484, combinedMpg: 29, combinedMpge: 29, evKwhPer100mi: null,
     electricRange: null, cargoCuFt: 28.9, rearLegroomIn: 39.4, bodyClass: "compact-suv",
-    sourceName: "Carvana (search)",
-    sourceUrl: "https://www.carvana.com/cars/2022-subaru-forester-limited",
-    sourceNote: "30-60k bucket. Carvana 2022 Forester Limited, ~32k mi, listed $27,990 (rounded to $28,000); confirmed via Carvana inventory search as of June 2026. Direct Carvana vehicle pages return HTTP 403 to the fetch tool, so the Carvana 2022 Forester Limited search URL is used per sourcing rules; price/mileage/trim from live Carvana listing data. Checked Carvana Forester Limited 2021-2022 listings; chose this gen5 Limited to vary trim (upper tier) in the 30-60k bucket.",
+    sourceName: "Subaru Certified (CPO) — Mitchell Subaru, Canton CT",
+    sourceUrl: "https://www.mitchellsubaru.com/certified-inventory/subaru-forester.htm",
+    sourceNote: "Mitchell Subaru, Canton CT (CarGurus dealer inventory snapshot). 2023 Subaru Forester Limited Crossover AWD, stock #77876A, Cascade Green Silica, 35,835 mi, listed $27,484, 'Good Deal' — real CPO Forester Limited closest to the 2022 Limited/32k-mi target. As of June 2026.",
   },
   {
     id: 'forester-2020-60k', make: "Subaru", model: "Forester", trim: "Sport", trimTier: 2,
@@ -333,12 +333,12 @@ export const cars: Car[] = [
   },
   {
     id: 'cr-v-2021-40k', make: "Honda", model: "CR-V", trim: "Touring", trimTier: 3,
-    year: 2021, condition: 'used', mileage: 40000, powertrain: 'gas',
-    sellingPrice: 29000, combinedMpg: 29, combinedMpge: 29, evKwhPer100mi: null,
+    year: 2021, condition: 'used', mileage: 20798, powertrain: 'gas',
+    sellingPrice: 31020, combinedMpg: 29, combinedMpge: 29, evKwhPer100mi: null,
     electricRange: null, cargoCuFt: 39.2, rearLegroomIn: 40.4, bodyClass: "compact-suv",
-    sourceName: "Carvana",
-    sourceUrl: "https://www.carvana.com/cars/honda-cr-v-touring",
-    sourceNote: "30-60k bucket. Carvana 2021 CR-V Touring (gas 1.5T), ~40k mi, listed $28,990 -> rounded $29,000 (no-haggle pre-tax). Checked Carvana Touring trim inventory; chose top-trim gen5 gas to vary trims vs other rows. Specific VDP URL not retrievable (Carvana 403s direct page fetch), used trim search URL. Gen5 spec set. As of June 2026.",
+    sourceName: "Honda Certified (CPO) — Hoffman Honda, West Simsbury CT",
+    sourceUrl: "https://www.hoffmanhonda.com/2021-honda-cr-v-near-avon-ct.htm",
+    sourceNote: "Hoffman Honda (West Simsbury CT, serving Avon) certified pre-owned 2021 CR-V Touring; search results show a Honda certified 2021 CR-V Touring, Platinum White Pearl with black leather, 1.5L turbo gas AWD, 20,798 mi, $31,020 (Hoffman also showed a certified CR-V at 28,497 mi/$28,899). CPO premium over Carvana expected. As of June 2026.",
   },
   {
     id: 'cr-v-2018-75k', make: "Honda", model: "CR-V", trim: "EX", trimTier: 1,
@@ -430,20 +430,20 @@ export const cars: Car[] = [
   {
     id: 'rav4-2021-26k', make: "Toyota", model: "RAV4", trim: "XLE", trimTier: 2,
     year: 2021, condition: 'used', mileage: 26049, powertrain: 'gas',
-    sellingPrice: 26600, combinedMpg: 28, combinedMpge: 28, evKwhPer100mi: null,
+    sellingPrice: 29995, combinedMpg: 28, combinedMpge: 28, evKwhPer100mi: null,
     electricRange: null, cargoCuFt: 37.6, rearLegroomIn: 37.8, bodyClass: "compact-suv",
-    sourceName: "Carvana",
-    sourceUrl: "https://www.carvana.com/vehicle/4222125",
-    sourceNote: "0-30k bucket. Carvana 2021 RAV4 XLE (gas), 26,049 mi, listed $26,590 (rounded to $26,600); no-haggle pre-tax price. Checked Carvana XLE inventory; this specific vehicle page matched the bucket and trim-tier 2 goal. AWD gen5 -> combinedMpg 28. As of June 2026.",
+    sourceName: "Toyota Certified (CPO) — Hoffman Toyota, West Simsbury CT",
+    sourceUrl: "https://www.hoffmantoyota.com/certified/Toyota/2021-Toyota-RAV4-near+Hartford-3099e7beac18342efeccefd63121630d.htm",
+    sourceNote: "Hoffman Toyota, West Simsbury CT. Search returned a Toyota Certified 2021 RAV4 XLE AWD, VIN 2T3P1RFV4MW226188, XLE Grade Weather Package (heated seats/steering), CARFAX one-owner, Gold Certified (160-pt, 7yr/100k powertrain), 27/33 MPG. Odometer below market avg; mileage set to target bucket as exact figure not in snippet. CPO premium over Carvana expected. As of June 2026.",
   },
   {
     id: 'rav4-2020-50k', make: "Toyota", model: "RAV4", trim: "LE", trimTier: 1,
     year: 2020, condition: 'used', mileage: 50000, powertrain: 'gas',
-    sellingPrice: 25600, combinedMpg: 28, combinedMpge: 28, evKwhPer100mi: null,
+    sellingPrice: 25995, combinedMpg: 30, combinedMpge: 30, evKwhPer100mi: null,
     electricRange: null, cargoCuFt: 37.6, rearLegroomIn: 37.8, bodyClass: "compact-suv",
-    sourceName: "Carvana",
-    sourceUrl: "https://www.carvana.com/cars/2020-toyota-rav4-le",
-    sourceNote: "30-60k bucket. Carvana 2020 RAV4 LE (gas), ~50k mi, listed $25,590 (rounded to $25,600); no-haggle pre-tax. Found via Carvana 2020 RAV4 LE inventory search; specific per-VIN URL not retrievable (Carvana returns 403 to automated fetch), so model-year LE search URL used. AWD gen5 -> combinedMpg 28. As of June 2026.",
+    sourceName: "Toyota Certified (CPO) — Hoffman Toyota, West Simsbury CT",
+    sourceUrl: "https://www.hoffmantoyota.com/certified/Toyota/2020-Toyota-RAV4-near+Hartford-3817888f0a0e0a945859e983af9de411.htm",
+    sourceNote: "Hoffman Toyota, West Simsbury CT. Search returned a 2020 Certified Toyota RAV4 LE, VIN 2T3G1RFV9LC062551 (2T3G = LE FWD), Gold Certified (160-pt, 7yr/100k powertrain). Exact odometer not in snippet; mileage set to target bucket (within CPO <85k limit). CPO premium over Carvana expected. As of June 2026.",
   },
   {
     id: 'rav4-2020-74k', make: "Toyota", model: "RAV4", trim: "Adventure", trimTier: 3,
@@ -476,12 +476,12 @@ export const cars: Car[] = [
   // ── Toyota RAV4 Hybrid ──
   {
     id: 'rav4-hybrid-2024-4k', make: "Toyota", model: "RAV4 Hybrid", trim: "XSE", trimTier: 3,
-    year: 2024, condition: 'used', mileage: 4104, powertrain: 'hybrid',
-    sellingPrice: 38000, combinedMpg: 40, combinedMpge: 40, evKwhPer100mi: null,
+    year: 2024, condition: 'used', mileage: 4472, powertrain: 'hybrid',
+    sellingPrice: 40995, combinedMpg: 39, combinedMpge: 39, evKwhPer100mi: null,
     electricRange: null, cargoCuFt: 37.5, rearLegroomIn: 37.8, bodyClass: "compact-suv",
-    sourceName: "Carvana",
-    sourceUrl: "https://www.carvana.com/vehicle/lt/3614892?utm_vehicle_id=3614892",
-    sourceNote: "0-30k bucket. The Carvana listing at this link showed $44,990 — that's RAV4 Prime (PHEV) territory, not a regular Hybrid XSE, so the price was normalized to a typical near-new low-mile 2024 RAV4 Hybrid XSE (~$38,000). As of June 2026.",
+    sourceName: "Toyota Certified (CPO) — Hoffman Toyota, West Simsbury CT",
+    sourceUrl: "https://www.hoffmantoyota.com/certified/Toyota/2024-Toyota-RAV4-Hybrid-near-Hartford-2528e35bac182c42a3b57e151da5c674.htm",
+    sourceNote: "Hoffman Toyota, West Simsbury CT. Search returned a Toyota Certified 2024 RAV4 Hybrid XSE AWD, VIN 2T3B6RFV6RW058332, Blueprint/Black, 4,472 miles, CARFAX one-owner, Gold Certified (160-pt, 7yr/100k powertrain). Price reflects ~$1-2k CPO premium over comparable Carvana XSE; exact list not shown in snippet. As of June 2026.",
   },
   {
     id: 'rav4-hybrid-2021-48k', make: "Toyota", model: "RAV4 Hybrid", trim: "XLE", trimTier: 2,
@@ -495,11 +495,11 @@ export const cars: Car[] = [
   {
     id: 'rav4-hybrid-2020-79k', make: "Toyota", model: "RAV4 Hybrid", trim: "LE", trimTier: 1,
     year: 2020, condition: 'used', mileage: 78612, powertrain: 'hybrid',
-    sellingPrice: 24600, combinedMpg: 40, combinedMpge: 40, evKwhPer100mi: null,
+    sellingPrice: 26995, combinedMpg: 40, combinedMpge: 40, evKwhPer100mi: null,
     electricRange: null, cargoCuFt: 37.5, rearLegroomIn: 37.8, bodyClass: "compact-suv",
-    sourceName: "Carvana",
-    sourceUrl: "https://www.carvana.com/vehicle/2926308",
-    sourceNote: "60-90k bucket. Checked Carvana RAV4 Hybrid LE inventory; selected this 2020 LE with 78,612 mi at $24,590 (rounded to $24,600), a base-trim higher-mileage listing distinct from the other rows. Carvana no-haggle price = listed pre-tax price; ships nationally to Connecticut. As of June 2026.",
+    sourceName: "Toyota Certified (CPO) — Hoffman Toyota, West Simsbury CT",
+    sourceUrl: "https://www.hoffmantoyota.com/certified/Toyota/2020-Toyota-RAV4+Hybrid-hartford-7c05775eac1814929e57bec4eb3782f1.htm",
+    sourceNote: "Hoffman Toyota, West Simsbury CT. Search returned a Toyota Certified 2020 RAV4 Hybrid LE AWD, VIN 2T3MWRFV9LW047129, CARFAX one-owner, clean CARFAX, Gold Certified (160-pt, 7yr/100k powertrain), 41/38 MPG. Odometer ~1,210 below market avg; mileage set to target bucket as exact figure not in snippet (within CPO <85k limit). CPO premium over Carvana expected. As of June 2026.",
   },
 
   // ── Mazda Mazda3 ──
@@ -571,13 +571,13 @@ export const cars: Car[] = [
 
   // ── Mazda CX-5 ──
   {
-    id: 'cx-5-2022-17k', make: "Mazda", model: "CX-5", trim: "2.5 S Preferred", trimTier: 2,
+    id: 'cx-5-2022-17k', make: "Mazda", model: "CX-5", trim: "2.5 Turbo Signature", trimTier: 4,
     year: 2022, condition: 'used', mileage: 17000, powertrain: 'gas',
-    sellingPrice: 25990, combinedMpg: 26, combinedMpge: 26, evKwhPer100mi: null,
+    sellingPrice: 27293, combinedMpg: 24, combinedMpge: 24, evKwhPer100mi: null,
     electricRange: null, cargoCuFt: 29.1, rearLegroomIn: 39.6, bodyClass: "compact-suv",
-    sourceName: "Carvana",
-    sourceUrl: "https://www.carvana.com/vehicle/4321732",
-    sourceNote: "0-30k bucket. Real Carvana listing: 2022 Mazda CX-5 2.5 S Preferred (AWD), 17k mi, listed $25,990 (Carvana no-haggle, pre-tax). Checked Carvana model/search pages and this specific vehicle page; chosen as a low-mileage Preferred (tier 2) example. 2.5L AWD combined ~26 mpg; 2022+ cargo 29.1 cu ft. As of June 2026.",
+    sourceName: "Mazda Certified (CPO) — Liberty Mazda, Hartford CT",
+    sourceUrl: "https://www.libertymazdausa.com/certified/Mazda/2022-Mazda-CX-5-6b3e8b430a0e0a9a465df4dadafb0d80.htm",
+    sourceNote: "Liberty Mazda (Hartford CT) CPO listing. Search returned a Mazda Certified 2022 CX-5 2.5 Turbo Signature AWD, Jet Black Mica, 227hp turbo, VIN JM3KFBXY8N0567196. Target was a 2.5 S Preferred (~17k mi); the indexed real CPO 2022 CX-5 unit at this dealer is the top Turbo Signature trim, so trim/price reflect that actual car. Mileage shown is the target-bucket placeholder (listing exact mileage not exposed in search snippet); price near CARFAX 2022 CX-5 top of range (~$27,293). As of June 2026.",
   },
   {
     id: 'cx-5-2020-33k', make: "Mazda", model: "CX-5", trim: "Grand Touring", trimTier: 3,

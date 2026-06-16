@@ -74,7 +74,8 @@ src/
   analytics.ts      lazy Mixpanel (shared drewhoover.com token; safe to commit)
   main.tsx, styles.css
 scripts/
-  build-cars.mjs    generates src/data/cars.ts from a sourcing-workflow JSON (normalizes specs)
+  build-cars.mjs    (re)generates the whole src/data/cars.ts from a sourcing-workflow JSON
+  patch-cars.mjs    applies targeted updates onto cars.ts by id (e.g. CPO upgrades); arg2 = skip-list
   gen-og.mjs, gen-favicon.mjs   sharp-based asset generation
 ```
 
@@ -141,9 +142,20 @@ the file, then bump `asOf`.
 - **Capture the canonical listing URL anyway** for `sourceUrl` (the owner wants the link even if we
   can't deep-fetch it). For Carvana, a specific `vehicle/<id>` URL is best; a model-search URL
   (`carvana.com/cars/<model>`) is the documented fallback when the VIN page can't be confirmed.
-- **CPO dealer listings are first-class.** They satisfy "else certified", are often in-CT, and the owner
-  will sometimes hand you one directly (as with the Premier Kia link). Verify its details via WebSearch,
-  then set `sourceName: "Kia Certified (CPO) — <dealer, city>"`.
+- **CPO dealer listings are first-class — and the owner prefers them over weak Carvana-search links.**
+  They satisfy "else certified", are usually in-CT, and the owner will sometimes hand you one directly
+  (as with the Premier Kia link). The **proven method** (workflow `cpo-upgrade`):
+  1. Pick ONE reputable CT certified-pre-owned dealer per make (e.g. Premier Kia of Branford, Hoffman
+     Toyota/Honda of West Simsbury, Mitchell Subaru of Canton, Liberty Mazda of Hartford).
+  2. Targeted searches: `"<dealer> certified <year> <make> <model> <trim>"`. Read the price / mileage /
+     trim / VIN / stock# straight from the **search-result snippets** (the dealer page itself 403s).
+  3. `sourceName: "<Brand> Certified (CPO) — <Dealer>, <City> CT"`, `sourceUrl` = the specific vehicle
+     `.htm` page if it's in results, else the dealer's certified-inventory page for that model.
+  - **Manufacturer CPO only covers recent, low-mileage cars** (~within 5–6 model years and under
+    ~60–85k mi, brand-dependent). So CPO upgrades naturally apply to the newer/low-mileage rows; the
+    **older/high-mileage rows stay on Carvana** — that's expected, not a gap. Watch for **body-style
+    mismatches** (a sedan Civic/Mazda3 listing is NOT our hatchback) and **brand-mismatched URLs** (a
+    "Honda Certified" car on a Hyundai-dealer domain is a red flag) — skip those.
 - Carvana is no-haggle → `sellingPrice` = the listed price (pre-tax). CPO → the listed price.
 
 **The sourcing pipeline (how the current data was built):**
