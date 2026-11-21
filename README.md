@@ -14,12 +14,12 @@ Vite + React 18 + TypeScript + granular `d3-*` (scale/array/format). Lazy Mixpan
 Deploys to GitHub Pages via Actions. Same family as the other drewhoover.com data-viz sites.
 
 ```bash
-npm install
-npm run dev      # local dev server
-npm test         # vitest (OTD round-trip, energy-cost model, dataset integrity)
-npm run build    # tsc -b && vite build
-npm run gen:og       # regenerate public/og.png       (after a redesign)
-npm run gen:favicon  # regenerate the favicon set
+pnpm install
+pnpm run dev      # local dev server
+pnpm test         # vitest (OTD round-trip, energy-cost model, dataset integrity)
+pnpm run build    # tsc -b && vite build
+pnpm run gen:og       # regenerate public/og.png       (after a redesign)
+pnpm run gen:favicon  # regenerate the favicon set
 ```
 
 ## Data

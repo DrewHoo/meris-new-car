@@ -23,7 +23,7 @@ skill). The owner is a data-viz person; quality of both the analysis and the cha
 
 - **Vite + React 18 + TypeScript**, granular `d3-*` (scale/array/format), lazy Mixpanel analytics.
 - **GitHub Pages via Actions.** `DrewHoo/meris-new-car`, public. `.github/workflows/deploy.yml` builds
-  on push to `main` (`npm ci` → `npm run build` → upload `dist` → deploy-pages). **No cron** — the data
+  on push to `main` (`pnpm install --frozen-lockfile` → `pnpm run build` → upload `dist` → deploy-pages). **No cron** — the data
   is a committed snapshot, not a scheduled fetch.
 - `vite.config.ts` sets `base: '/meris-new-car/'` — this MUST match the repo name or every asset 404s.
 - The project card on the index lives in a *different* repo:
@@ -35,12 +35,12 @@ skill). The owner is a data-viz person; quality of both the analysis and the cha
 ### Commands
 
 ```bash
-npm install
-npm run dev      # local dev server (http://localhost:5173/meris-new-car/)
-npm test         # vitest — OTD round-trip, energy-cost model, dataset integrity
-npm run build    # tsc -b && vite build   (the type-check is the real gate; vitest skips types)
-npm run gen:og       # regenerate public/og.png after a visual/headline change
-npm run gen:favicon  # regenerate the favicon set
+pnpm install
+pnpm run dev      # local dev server (http://localhost:5173/meris-new-car/)
+pnpm test         # vitest — OTD round-trip, energy-cost model, dataset integrity
+pnpm run build    # tsc -b && vite build   (the type-check is the real gate; vitest skips types)
+pnpm run gen:og       # regenerate public/og.png after a visual/headline change
+pnpm run gen:favicon  # regenerate the favicon set
 node scripts/build-cars.mjs <workflow-output.json>   # regenerate src/data/cars.ts (see Data)
 ```
 
@@ -207,5 +207,5 @@ next steps, roughly in order of value:
 
 When adding a view: feed it `derived`/`visible` from `App.tsx`, lean on the existing registries and
 `scoring.ts`, add any new state to `urlState.ts` so it stays shareable, and keep the light-theme
-card-section styling. Verify in the preview (mobile + desktop) and keep `npm run build` + `npm test`
+card-section styling. Verify in the preview (mobile + desktop) and keep `pnpm run build` + `pnpm test`
 green before deploying.
